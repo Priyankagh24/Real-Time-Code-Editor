@@ -31,17 +31,18 @@ const EditorPage = () => {
                 reactNavigator('/');
             }
 
-            // ✅ Get username from state, localStorage, or ask user
-            let username = location.state?.username || localStorage.getItem('username');
-            if (!username) {
-                username = prompt('Enter your username');
-                localStorage.setItem('username', username);
-            }
+// ✅ Get username from state, localStorage, or ask user
+let username = location.state?.username || localStorage.getItem('username');
+if (!username) {
+    username = prompt('Enter your username');
+    localStorage.setItem('username', username);
+}
 
-            socketRef.current.emit(ACTIONS.JOIN, {
-                roomId,
-                username,
-            });
+socketRef.current.emit(ACTIONS.JOIN, {
+    roomId,
+    username,
+});
+
 
             // Listening for joined event
             socketRef.current.on(
@@ -94,9 +95,15 @@ const EditorPage = () => {
         reactNavigator('/');
     }
 
+<<<<<<< HEAD
     // if (!location.state) {
     //     return <Navigate to="/" />;
     // }
+=======
+    if (!location.state) {
+        return <Navigate to="/" />;
+    }
+>>>>>>> 0c3960d06c7f22d01135e4f7b3a4a13cdf2d0dbe
 
     return (
         <div className="mainWrap">

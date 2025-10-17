@@ -21,9 +21,12 @@ const Home = () => {
             return;
         }
 
+<<<<<<< HEAD
         localStorage.setItem('username', username);
 
 
+=======
+>>>>>>> 0c3960d06c7f22d01135e4f7b3a4a13cdf2d0dbe
         // Redirect
         navigate(`/editor/${roomId}`, {
             state: {
