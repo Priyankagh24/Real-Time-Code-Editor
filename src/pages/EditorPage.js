@@ -95,15 +95,13 @@ socketRef.current.emit(ACTIONS.JOIN, {
         reactNavigator('/');
     }
 
-<<<<<<< HEAD
-    // if (!location.state) {
-    //     return <Navigate to="/" />;
-    // }
-=======
+
+    
+
     if (!location.state) {
         return <Navigate to="/" />;
     }
->>>>>>> 0c3960d06c7f22d01135e4f7b3a4a13cdf2d0dbe
+
 
     return (
         <div className="mainWrap">
