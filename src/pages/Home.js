@@ -22,17 +22,19 @@ const Home = () => {
         }
 
 
-        localStorage.setItem('username', username);
+       // Get username from input OR localStorage
+    let user = username || localStorage.getItem('username');
+    if (!user) {
+        user = prompt('Enter your username');
+        if (!user) return;
+        localStorage.setItem('username', user);
+    }
+
+    // Redirect
+    navigate(`/editor/${roomId}`, { state: { username: user } });
+};
 
 
-
-        // Redirect
-        navigate(`/editor/${roomId}`, {
-            state: {
-                username,
-            },
-        });
-    };
 
     const handleInputEnter = (e) => {
         if (e.code === 'Enter') {
